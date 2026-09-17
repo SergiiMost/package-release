@@ -36,8 +36,8 @@ jobs:
       - name: Test and build
         run: npx nx run-many -t test build
 
-      - name: Publish packages
-        run: npx nx release publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
-          NPM_CONFIG_PROVENANCE: true
+      # - name: Publish packages
+      #   run: npx nx release publish
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
+      #     NPM_CONFIG_PROVENANCE: true
