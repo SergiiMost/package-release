@@ -5,6 +5,7 @@ on:
     branches:
       - 'feature/**'
       - 'feat/**'
+      - 'chore/**'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
