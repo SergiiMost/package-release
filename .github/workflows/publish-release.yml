@@ -56,8 +56,11 @@ jobs:
       - name: Test and build
         run: npx nx run-many -t test build -p "${{ inputs.project }}"
 
+      # `nx release version` defaults git-commit/git-tag to false when run as a
+      # standalone subcommand (only the combined `nx release` command defaults
+      # them to true), so they must be requested explicitly here
       - name: Version release
-        run: npx nx release version --specifier=${{ inputs.version_bump }} -p "${{ inputs.project }}"
+        run: npx nx release version --specifier=${{ inputs.version_bump }} -p "${{ inputs.project }}" --git-tag --git-commit=false
 
       - name: Publish package
         run: npx nx release publish --tag=latest -p "${{ inputs.project }}"
