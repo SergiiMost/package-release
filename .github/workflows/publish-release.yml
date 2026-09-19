@@ -64,7 +64,6 @@ jobs:
         run: npx nx release publish --tag=latest -p "${{ inputs.project }}"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
-          NPM_CONFIG_PROVENANCE: true
 
       # the version-bump commit is never pushed to the default branch (avoids
       # branch protection issues); only the tag is pushed, which is the

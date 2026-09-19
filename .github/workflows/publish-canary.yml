@@ -55,4 +55,3 @@ jobs:
           npx nx release publish --tag=next -p "${{ steps.affected.outputs.projects }}"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
-          NPM_CONFIG_PROVENANCE: true
