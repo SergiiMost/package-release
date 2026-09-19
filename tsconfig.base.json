@@ -16,7 +16,7 @@
     "strict": false,
     "paths": {
       "@sergiim/angular-lib": ["./libs/angular-lib/src/index.ts"],
-      "@sergiim/js-lib": ["./libs/js-lib/src/index.ts"]
+      "@sergiim/js-lib2": ["./libs/js-lib2/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AngularLib } from '@sergiim/angular-lib';
-import { jsLib } from '@sergiim/js-lib';
+import { jsLib } from '@sergiim/js-lib2';
 
 @Component({
   imports: [RouterModule, AngularLib],

@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       project:
-        description: 'Project (library) name to release, e.g. js-lib or angular-lib'
+        description: 'Project (library) name to release, e.g. js-lib2 or angular-lib'
         required: true
         type: string
       version_bump:
