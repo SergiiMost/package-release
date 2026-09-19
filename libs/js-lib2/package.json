@@ -1,6 +1,6 @@
 {
-  "name": "@sergiim/js-lib",
-  "version": "0.0.1",
+  "name": "@sergiim/js-lib2",
+  "version": "1.0.0",
   "type": "commonjs",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",

@@ -1,7 +1,7 @@
 {
-  "name": "js-lib",
+  "name": "js-lib2",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/js-lib/src",
+  "sourceRoot": "libs/js-lib2/src",
   "projectType": "library",
   "release": {
     "version": {
@@ -16,10 +16,10 @@
       "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/libs/js-lib",
-        "main": "libs/js-lib/src/index.ts",
-        "tsConfig": "libs/js-lib/tsconfig.lib.json",
-        "assets": ["libs/js-lib/*.md"]
+        "outputPath": "dist/libs/js-lib2",
+        "main": "libs/js-lib2/src/index.ts",
+        "tsConfig": "libs/js-lib2/tsconfig.lib.json",
+        "assets": ["libs/js-lib2/*.md"]
       }
     },
     "nx-release-publish": {
