@@ -1,3 +1,3 @@
 export function jsLib(): string {
-  return 'js-lib2-here';
+  return 'js-lib2-here!';
 }

@@ -53,6 +53,16 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+      # prevents publishing a redundant release (e.g. an accidental re-run)
+      # against a commit that was already released for this project
+      - name: Ensure target commit is not already released
+        run: |
+          existing_tag=$(git tag --points-at HEAD | grep -E "^${{ inputs.project }}@" || true)
+          if [[ -n "$existing_tag" ]]; then
+            echo "::error::Commit $(git rev-parse HEAD) is already released for '${{ inputs.project }}' as $existing_tag. Choose a different commit."
+            exit 1
+          fi
+
       - name: Test and build
         run: npx nx run-many -t test build -p "${{ inputs.project }}"
 
@@ -69,6 +79,8 @@ jobs:
 
       # the version-bump commit is never pushed to the default branch (avoids
       # branch protection issues); only the tag is pushed, which is the
-      # source of truth for released versions (see currentVersionResolver)
+      # source of truth for released versions (see currentVersionResolver).
+      # Filtered to this project's tag pattern (rather than `git describe`)
+      # since HEAD could carry tags for other projects too.
       - name: Push release tag
-        run: git push origin "$(git describe --tags --exact-match HEAD)"
+        run: git push origin "$(git tag --points-at HEAD | grep -E "^${{ inputs.project }}@")"
