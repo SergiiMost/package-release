@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { jsLib } from '@sergiim/js-lib2';
 
 @Component({
   selector: 'lib-angular-lib',
@@ -6,4 +7,8 @@ import { Component } from '@angular/core';
   templateUrl: './angular-lib.html',
   styleUrl: './angular-lib.css',
 })
-export class AngularLib {}
+export class AngularLib implements OnInit {
+  ngOnInit() {
+    console.log(jsLib());
+  }
+}
