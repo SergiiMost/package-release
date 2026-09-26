@@ -1,6 +1,9 @@
 {
   "name": "@sergiim/angular-lib",
   "version": "1.0.0",
+  "dependencies": {
+    "@sergiim/js-lib2": "^1.0.0"
+  },
   "peerDependencies": {
     "@angular/core": "^22.1.0"
   },
