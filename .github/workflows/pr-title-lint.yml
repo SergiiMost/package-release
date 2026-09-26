@@ -20,7 +20,7 @@ jobs:
         env:
           PR_TITLE: ${{ github.event.pull_request.title }}
         run: |
-          pattern='^(feat|fix|chore|docs|revert)(\([a-z0-9./-]+\))?!?: .+'
+          pattern='^(feat|fix|chore|docs|revert)(\([a-z0-9./,-]+\))?!?: .+'
           if [[ ! "$PR_TITLE" =~ $pattern ]]; then
             echo "::error::PR title '$PR_TITLE' does not follow conventional commits format."
             echo "Expected format: <type>(optional-scope): <description>"
